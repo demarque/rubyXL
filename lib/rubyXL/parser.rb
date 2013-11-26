@@ -394,7 +394,7 @@ module RubyXL
         end
       end
       files['styles'] = Nokogiri::XML.parse(File.open(File.join(dir_path,'xl','styles.xml'),'r'))
-      @num_sheets = files['workbook'].css('sheets').children.size
+      @num_sheets = files['workbook'].css('sheets sheet').size
       @num_sheets = Integer(@num_sheets)
 
       #adds all worksheet xml files to files hash
